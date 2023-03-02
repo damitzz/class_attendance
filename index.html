@@ -10,7 +10,7 @@
 
 <body>
   <header class="header">
-    
+
     <main>
       <div class="header-1">
         CONFERÊNCIA DE PARTICIPANTES
@@ -19,11 +19,19 @@
         </div>
       </div>
       <div id="cards"></div>
-      
+
     </main>
   </header>
   <button id="exportar-csv">Exportar CSV</button>
-  
+  <label for="tipo-select">Filtrar por tipo:</label>
+
+  <select id="tipo-select">
+    <option value="Todos">Todos</option>
+    <option value="CG">CG</option>
+    <option value="CFG-ATIVA">CFG-ATIVA</option>
+    <option value="CFG-RESERVA">CFG-RESERVA</option>
+  </select>
+
 
   <script src="script.js"></script>
 </body>

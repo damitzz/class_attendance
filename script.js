@@ -181,7 +181,7 @@ function criarTela() {
     criarLinha(linha, [
         listaPessoal[25], listaPessoal[26]
     ]);
-} 
+}
 
 const cards = document.querySelectorAll('.card');
 for (let i = 0; i < cards.length; i++) {
@@ -191,7 +191,7 @@ for (let i = 0; i < cards.length; i++) {
 }
 
 const exportarCsvBtn = document.getElementById('exportar-csv');
-exportarCsvBtn.addEventListener('click', function() {
+exportarCsvBtn.addEventListener('click', function () {
     let selectedCards = [];
     let unselectedCards = [];
     const allCards = document.querySelectorAll('.card');
@@ -199,9 +199,9 @@ exportarCsvBtn.addEventListener('click', function() {
         const guerra = card.querySelector('h3').innerText;
         const tipo = card.querySelector('p').innerText;
         if (card.classList.contains('selected')) {
-            selectedCards.push({guerra, tipo});
+            selectedCards.push({ guerra, tipo });
         } else {
-            unselectedCards.push({guerra, tipo});
+            unselectedCards.push({ guerra, tipo });
         }
     });
     let csv = "data:text/csv;charset=utf-8,";
@@ -218,4 +218,24 @@ exportarCsvBtn.addEventListener('click', function() {
     link.setAttribute("download", "cartoes.csv");
     document.body.appendChild(link);
     link.click();
+});
+
+
+
+function filtrarPorTipo(tipoSelecionado) {
+    const cards = document.querySelectorAll('.card');
+    for (let i = 0; i < cards.length; i++) {
+        const tipoElemento = cards[i].querySelector('p').innerText;
+        if (tipoSelecionado === 'Todos' || tipoSelecionado === tipoElemento) {
+            cards[i].style.display = 'block';
+        } else {
+            cards[i].style.display = 'none';
+        }
+    }
+}
+
+// Adiciona o manipulador de eventos para o elemento select
+const tipoSelect = document.getElementById('tipo-select');
+tipoSelect.addEventListener('change', function () {
+    filtrarPorTipo(this.value);
 });

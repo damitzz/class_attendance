@@ -12,7 +12,8 @@ body {
   background-color: transparent;
   width: 100%;
 }
-.header-1{
+
+.header-1 {
   background-color: #333;
   color: white;
   padding: 10px;
@@ -21,7 +22,8 @@ body {
   font-family: fantasy;
   height: 80px;
 }
-.logo img{
+
+.logo img {
   width: 100px;
   height: 100px;
   position: absolute;
@@ -78,6 +80,33 @@ body {
   margin: 10px;
   cursor: pointer;
 }
+
+#tipo-select {
+  background-color: #6fdc09;
+
+  width: 250px;
+  height: 50px;
+  font-size: 30px;
+  margin: 10px;
+}
+
+#tipo-select option {
+  font-size: 30px;
+}
+
+#tipo-select option:hover {
+  background-color: #6fdc09;
+  color: white;
+}
+
+label {
+  color: #f2f2f2;
+  text-shadow: #333;
+  text-emphasis-color: #f2f2f2;
+  font-size: 30px;
+  margin: 10px;
+}
+
 @media screen and (max-width: 600px) {
   #main {
     flex-direction: column;
