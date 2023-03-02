@@ -22,6 +22,15 @@ body {
   font-family: fantasy;
   height: 80px;
 }
+.header-2{
+  background-color: #837c7c;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  font-size: 30px;
+  font-family: fantasy;
+  height: 60px;
+}
 
 .logo img {
   width: 100px;
@@ -106,6 +115,8 @@ label {
   font-size: 30px;
   margin: 10px;
 }
+
+
 
 @media screen and (max-width: 600px) {
   #main {

@@ -195,6 +195,10 @@ exportarCsvBtn.addEventListener('click', function () {
     let selectedCards = [];
     let unselectedCards = [];
     const allCards = document.querySelectorAll('.card');
+    const data = document.getElementById('dia');
+    const hora = document.getElementById('hora');
+    const local = document.getElementById('local');
+
     allCards.forEach(card => {
         const guerra = card.querySelector('h3').innerText;
         const tipo = card.querySelector('p').innerText;
@@ -205,7 +209,9 @@ exportarCsvBtn.addEventListener('click', function () {
         }
     });
     let csv = "data:text/csv;charset=utf-8,";
-    csv += "Guerra,Tipo\n";
+    csv += "Data,Hora,Local\n";
+    csv += `${data.value},${hora.value},${local.value}\n`;
+    csv += "Situacao,Guerra,Tipo\n";
     selectedCards.forEach(card => {
         csv += `PRESENTE,${card.guerra},${card.tipo}\n`;
     });
@@ -233,6 +239,8 @@ function filtrarPorTipo(tipoSelecionado) {
         }
     }
 }
+
+const data = document.getElementById('dia').value;
 
 // Adiciona o manipulador de eventos para o elemento select
 const tipoSelect = document.getElementById('tipo-select');
